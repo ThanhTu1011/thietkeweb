@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        form {
+    background: #eee;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+form span {
+    display: inline-block;
+    width: 80px;
+    margin: 10px 3px 3px 8px;
+}
+
+form input, form select {
+    width: 150px;
+    height: 20px;
+    margin: 0px 5px;
+    box-sizing: border-box;
+}
+
+form select {
+    margin: 1px;
+}
+
+form input[type='submit'] {
+    display: block;
+    margin: 10px 0px 12px 98px;
+    width: 80px;
+    height: 30px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form input[type='submit']:hover {
+    background-color: #0056b3;
+}
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <form>
+        <span>First name:</span>
+        <input type="text" name="firstname"> <br>
+        <span>Last name:</span>
+        <input type="text" name="lastname"> <br>
+        <span>Email:</span>
+        <input type="email" name="email"> <br>
+        <span>Town:</span>
+        <select name="town">
+            <option value="1">Sofia</option>
+            <option value="2">Ohio</option>
+            <option value="3">Alaba</option>
+        </select> <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

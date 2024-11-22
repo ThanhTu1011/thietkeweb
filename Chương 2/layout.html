@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Layout Website</title>
+    <style>
+        /* Tổng thể body */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Thùng chứa */
+        #container {
+            width: 1000px;
+            margin: 0 auto;
+            min-height: 600px;
+            background-color: #CCC;
+        }
+
+        /* Header */
+        header {
+            background-color: rgb(151, 220, 234);
+            height: 150px;
+            position: relative;
+            text-align: center;
+            font-size: 24px;
+            padding-top: 50px;
+        }
+
+        /* Menu ngang */
+        nav {
+            height: 60px;
+            background-color: #000;
+            color: #FFF;
+        }
+
+        nav ul {
+            padding: 0;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline-block;
+            padding: 5px 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #FFF;
+        }
+
+        nav ul li:hover {
+            text-decoration: underline;
+            background-color: #CF3;
+            color: #F00;
+            border-radius: 9px;
+        }
+
+        nav img {
+            margin-top: 20px;
+        }
+
+        /* Nội dung chính */
+        #content {
+            background-color: #FCF;
+            min-height: 400px;
+            width: 790px;
+            float: left;
+            padding: 5px;
+        }
+
+        #right {
+            background-color: rgb(140, 245, 161);
+            min-height: 400px;
+            width: 200px;
+            float: right;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #C09;
+            color: #FFF;
+            height: 30px;
+            text-align: center;
+            clear: both;
+            margin: 5px 0 0;
+            padding: 10px 0;
+        }
+
+        /* Sản phẩm */
+        .product-item {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-item img {
+            width: 40%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .product-item h2 {
+            font-size: 20px;
+        }
+
+        .product-item .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .product-item .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Chi tiết sản phẩm */
+        .product-detail {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-detail img {
+            width: 40%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+.product-detail h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+<!-- Thùng chứa -->
+<div id="container">
+<!-- Header -->
+<header>
+    HEADER
+    <div style="position: absolute; top: 5px; right: 5px;">
+        <img src="./image/face.jpg" width="32" height="32">
+        <img src="./image/you.png" width="32" height="32">
+        <img src="./image/go.png" width="32" height="32">
+        <img src="./image/ya.png" width="32" height="32">
+    </div>
+</header>
+
+<!-- Menu ngang -->
+<nav>
+    <div style="float: left;">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="#">FeedBack</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Site Map</a></li>
+        </ul>
+</nav>
+<div style="clear: both;"></div>
+
+<!-- Phần nội dung trang -->
+<div id="content">
+    Nội dung
+</div>
+
+<!-- Menu phải -->
+<div id="right"> MENU PHẢI</div>
+
+<!-- Footer -->
+<footer>
+    Bản quyền thuộc về Lê Thanh Tú
+</footer>
+</div>
+
+<!-- Trang Danh Sách Sản Phẩm -->
+<div id="container">
+<header>
+    <h1>PRODUCTS</h1>
+</header>
+
+<nav>
+    <div style="float: left;">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+        </ul>
+    </div>
+</nav>
+<div style="clear: both;"></div>
+
+<!-- Danh sách sản phẩm -->
+<div id="content">
+    <div class="product-item">
+        <img src="./image/thoai.webp" alt="Product 1" width="50" height="50">
+        <h2>Product Title 1</h2>
+        <p>Short description of the product.</p>
+        <a href="product-detail.html?id=1" class="btn">Xem thêm</a>
+    </div>
+    <div class="product-item">
+        <img src="./image/nhan.jpg" alt="Product 2" width="200">
+        <h2>Product Title 2</h2>
+        <p>Short description of the product.</p>
+        <a href="product-detail.html?id=2" class="btn">Xem thêm</a>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    Bản quyền thuộc về Lê Thanh Tú
+</footer>
+</div>
+
+<!-- Trang Chi Tiết Sản Phẩm -->
+<div id="container">
+    <header>
+        <h1>Product Details</h1>
+    </header>
+
+    <nav>
+        <div style="float: left;">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div style="clear: both;"></div>
+
+    <!-- Chi tiết sản phẩm -->
+    <div id="content">
+        <div class="product-detail">
+            <img src="./image/phone.jpg" alt="Product 1" width="100" height="40">
+            <h2>Product Title 1</h2>
+            <p>This is the detailed description of the product.</p>
+            <p>Giá: $199.99</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        Bản quyền thuộc về Lê Thanh Tú 
+    </footer>
+</div>
+</body>
+</html>
