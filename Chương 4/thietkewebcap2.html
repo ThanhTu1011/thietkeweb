@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Hai Cấp</title>
+    <style>
+        /* Định dạng menu chính (thể loại) */
+        .menu_theloai {
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #f0f0f0;
+            margin-bottom: 5px;
+            border: 1px solid #ddd;
+        }
+
+        /* Định dạng menu con (nhóm) */
+        .menu_nhom {
+            display: none; /* Ẩn menu con khi tải trang */
+            padding-left: 20px;
+        }
+
+        .menu_nhom a {
+            display: block; /* Hiển thị mỗi mục trên một dòng */
+            text-decoration: none;
+            color: #333;
+            padding: 5px 0;
+        }
+
+        .menu_nhom a:hover {
+            color: #007bff; /* Đổi màu khi hover */
+            text-decoration: underline;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Ẩn tất cả menu con khi tải trang
+            $(".menu_nhom").hide();
+
+            // Thêm sự kiện click cho menu chính
+            $(".menu_theloai").click(function () {
+                $(this).next(".menu_nhom").slideToggle(); // Hiện/ẩn menu con kế tiếp
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Menu Đời sống -->
+    <div class="menu_theloai">Đời sống</div>
+    <div class="menu_nhom">
+        <a href="?idTL=15">Hoa hậu</a>
+        <a href="?idTL=16">Nghệ sĩ</a>
+        <a href="?idTL=17">Mỹ thuật</a>
+    </div>
+
+    <!-- Menu Giải trí -->
+    <div class="menu_theloai">Giải trí</div>
+    <div class="menu_nhom">
+        <a href="?idTL=18">Âm nhạc</a>
+        <a href="?idTL=19">Thời trang</a>
+        <a href="?idTL=20">Điện ảnh</a>
+    </div>
+
+    <!-- Menu Thể thao -->
+    <div class="menu_theloai">Thể thao</div>
+    <div class="menu_nhom">
+        <a href="?idTL=21">Bóng đá</a>
+        <a href="?idTL=22">Tennis</a>
+        <a href="?idTL=23">Các môn khác</a>
+    </div>
+</body>
+</html>

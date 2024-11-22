@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        /* Định dạng cho giao diện */
+        body {
+            margin: 0 auto;
+            width: 1000px;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #00F;
+            text-align: center;
+        }
+
+        .slideshow {
+            width: 1000px;
+            overflow: hidden;
+            margin: 20px auto;
+            position: relative;
+        }
+
+        .slideshow_inner {
+            display: flex;
+            transition: margin-left 0.5s;
+        }
+
+        .slideshow_inner img {
+            width: 180px;
+            height: 150px;
+            margin-right: 10px;
+        }
+
+        .button {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .button input {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>GALLERY</h1>
+    </header>
+
+    <!-- Slideshow Section -->
+    <section>
+        <div class="slideshow">
+            <div class="slideshow_inner">
+                <a href="./image/big/xe1.jpg">
+                    <img src="./image/small/xe1.jpg" alt="Porsche 1">
+                </img>
+                <a href="./image/big/xe2.jpg">
+                    <img src="./image/small/xe2.jpg" alt="Porsche 2">
+                </a>
+                <a href="./image/big/xe3.jpg">
+                    <img src="./image/small/xe3.jpg" alt="Porsche 3">
+                </a>
+                <a href="./image/big/xe4.jpg">
+                    <img src="./image/small/xe4.jpg" alt="Porsche 4">
+                </a>
+                <a href="./image/big/xe5.jpg">
+                    <img src="./image/small/xe5.jpg" alt="Porsche 5">
+                </a>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="button">
+            <input type="button" id="btnLeft" name="btnLeft" value="<<">
+            <input type="button" id="btnRight" name="btnRight" value=">>">
+        </div>
+    </section>
+
+    <!-- jQuery and JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var i = 0; // Current margin offset
+            var itemWidth = 190; // Width of each image including margin-right
+
+            // Left button functionality
+            $("#btnLeft").click(function () {
+                if (i < 0) { // Prevent sliding beyond the first image
+                    i += itemWidth;
+                    $(".slideshow_inner").animate({
+                        marginLeft: i
+                    }, 500);
+                }
+            });
+
+            // Right button functionality
+            $("#btnRight").click(function () {
+                var maxOffset = -($(".slideshow_inner").width() - $(".slideshow").width());
+                if (i > maxOffset) { // Prevent sliding beyond the last image
+                    i -= itemWidth;
+                    $(".slideshow_inner").animate({
+                        marginLeft: i
+                    }, 500);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caro Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .buttons {
+            margin-bottom: 20px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .board {
+            display: none; /* Mặc định bàn cờ bị ẩn */
+            margin: 0 auto;
+            border: 2px solid black;
+            width: 320px;
+            box-sizing: border-box;
+        }
+        .row {
+            display: flex;
+        }
+        .cell {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #999;
+            text-align: center;
+            line-height: 40px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .row:nth-child(odd) .cell {
+            background-color: #f0f0f0; /* Màu nền dòng lẻ */
+        }
+        .row:nth-child(even) .cell {
+            background-color: #d9d9d9; /* Màu nền dòng chẵn */
+        }
+    </style>
+</head>
+<body>
+    <h1>TRÒ CHƠI CARO</h1>
+    <div class="buttons">
+        <button id="show">Show</button>
+        <button id="hide">Hide</button>
+        <button id="toggle">Toggle</button>
+    </div>
+    <div class="board" id="board">
+        <!-- Tạo bàn cờ 8x8 -->
+        <script>
+            for (let i = 0; i < 8; i++) {
+                document.write('<div class="row">');
+                for (let j = 0; j < 8; j++) {
+                    document.write('<div class="cell"></div>');
+                }
+                document.write('</div>');
+            }
+        </script>
+    </div>
+    <script>
+        const board = document.getElementById('board');
+        const cells = document.querySelectorAll('.cell');
+        const showButton = document.getElementById('show');
+        const hideButton = document.getElementById('hide');
+        const toggleButton = document.getElementById('toggle');
+
+        let isXTurn = true; // Biến xác định lượt đánh
+
+        // Sự kiện hiển thị bàn cờ
+        showButton.addEventListener('click', () => {
+            board.style.display = 'block';
+        });
+
+        // Sự kiện ẩn bàn cờ
+        hideButton.addEventListener('click', () => {
+            board.style.display = 'none';
+        });
+
+        // Sự kiện toggle bàn cờ
+        toggleButton.addEventListener('click', () => {
+            board.style.display = board.style.display === 'none' || board.style.display === '' ? 'block' : 'none';
+        });
+
+        // Sự kiện đánh X, O xen kẽ
+        cells.forEach(cell => {
+            cell.addEventListener('click', function () {
+                if (cell.textContent === '') { // Kiểm tra ô trống
+                    cell.textContent = isXTurn ? 'X' : 'O';
+                    cell.style.color = isXTurn ? 'red' : 'blue'; // Màu chữ
+                    isXTurn = !isXTurn; // Chuyển lượt
+                }
+            });
+        });
+    </script>
+</body>
+</html>

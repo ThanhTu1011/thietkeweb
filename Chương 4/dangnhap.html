@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+        }
+        .message {
+            margin-top: 20px;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Đăng Nhập</h1>
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Nhập username" required>
+        <input type="password" id="password" placeholder="Nhập password" required>
+        <button type="button" id="loginBtn">Login</button>
+        <div id="message" class="message"></div>
+    </form>
+    <script>
+        const loginBtn = document.getElementById('loginBtn');
+        const messageDiv = document.getElementById('message');
+
+        loginBtn.addEventListener('click', function () {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'ThanhTu' && password === 'Tudethuong') {
+                messageDiv.style.color = 'green';
+                messageDiv.textContent = 'Chúc mừng, bạn đã đăng nhập thành công!';
+                loginBtn.textContent = 'Logout';
+                loginBtn.addEventListener('click', () => location.reload());
+            } else {
+                messageDiv.style.color = 'red';
+                messageDiv.textContent = 'Sai thông tin đăng nhập!';
+            }
+        });
+    </script>
+</body>
+</html>
